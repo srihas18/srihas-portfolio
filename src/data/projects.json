@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Real-Time Financial Market Analysis Platform",
+    "stack": ["Kafka", "Spark", "Airflow", "Power BI"],
+    "description": "Streaming ingestion, processing, and dashboarding for market signals.",
+    "github": "",
+    "demo": "",
+    "embed": ""
+  },
+  {
+    "title": "Fraud Detection Pipeline",
+    "stack": ["XGBoost", "Isolation Forest", "SMOTE"],
+    "description": "End-to-end ML pipeline for fraud detection with class imbalance handling.",
+    "github": "",
+    "demo": "",
+    "embed": ""
+  },
+  {
+    "title": "Movie Recommendation System",
+    "stack": ["Collaborative Filtering", "TMDb API"],
+    "description": "Hybrid recsys with user-item CF and metadata enrichment via TMDb.",
+    "github": "",
+    "demo": "",
+    "embed": ""
+  },
+  {
+    "title": "Dining Data Visualization (IU)",
+    "stack": ["Tableau", "Gephi", "Python"],
+    "description": "Interactive visualizations exploring dining data at IU.",
+    "github": "",
+    "demo": "",
+    "embed": ""
+  }
+]
+
+

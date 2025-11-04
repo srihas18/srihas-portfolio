@@ -1,0 +1,25 @@
+{
+  "Data Science": [
+    { "name": "scikit-learn", "level": 85 },
+    { "name": "TensorFlow", "level": 70 },
+    { "name": "Pandas", "level": 90 },
+    { "name": "NumPy", "level": 88 }
+  ],
+  "Programming": [
+    { "name": "Python", "level": 92 },
+    { "name": "SQL", "level": 85 },
+    { "name": "R", "level": 70 }
+  ],
+  "Tools": [
+    { "name": "Tableau", "level": 85 },
+    { "name": "Power BI", "level": 80 },
+    { "name": "PySpark", "level": 75 },
+    { "name": "Airflow", "level": 72 },
+    { "name": "Kafka", "level": 70 },
+    { "name": "AWS", "level": 65 },
+    { "name": "Docker", "level": 70 },
+    { "name": "Git", "level": 85 }
+  ]
+}
+
+

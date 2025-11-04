@@ -1,0 +1,19 @@
+[
+  {
+    "name": "AWS Certified AI Practitioner",
+    "issuer": "Amazon Web Services",
+    "status": "In progress"
+  },
+  {
+    "name": "Data Visualization with Tableau",
+    "issuer": "Coursera",
+    "status": "Completed"
+  },
+  {
+    "name": "Applied Machine Learning",
+    "issuer": "Indiana University",
+    "status": "Completed"
+  }
+]
+
+
