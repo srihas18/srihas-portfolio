@@ -8,11 +8,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: '#2563eb',
+        accent: '#7A0019',
       },
     },
   },
   plugins: [],
 }
-
-

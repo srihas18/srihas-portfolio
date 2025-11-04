@@ -3,18 +3,13 @@
     "degree": "M.S. in Data Science",
     "institution": "Indiana University Bloomington",
     "period": "Aug 2024 – May 2026",
-    "details": [
-      "Coursework: Machine Learning, Data Visualization, Big Data Systems"
-    ]
+    "details": []
   },
   {
-    "degree": "B.Tech in Computer Science",
-    "institution": "SRM University",
+    "degree": "B.Tech in Computer Science and Engineering",
+    "institution": "Sathyabama University",
     "period": "Jun 2020 – Jun 2024",
-    "details": [
-      "Coursework: Algorithms, Databases, AI"
-    ]
+    "gpa": "8.7 / 10.0",
+    "details": []
   }
 ]
-
-

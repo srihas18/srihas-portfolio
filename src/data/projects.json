@@ -1,24 +1,32 @@
 [
   {
-    "title": "Real-Time Financial Market Analysis Platform",
-    "stack": ["Kafka", "Spark", "Airflow", "Power BI"],
-    "description": "Streaming ingestion, processing, and dashboarding for market signals.",
+    "title": "Event-Driven PII Redaction Pipeline",
+    "stack": ["Spark", "Kafka", "Docker"],
+    "description": "Built real-time pipeline cutting latency 35% and automating SHA-256 PII redaction (GDPR/CCPA compliance).",
     "github": "",
     "demo": "",
     "embed": ""
   },
   {
-    "title": "Fraud Detection Pipeline",
+    "title": "Advanced Credit Card Fraud Detection",
     "stack": ["XGBoost", "Isolation Forest", "SMOTE"],
-    "description": "End-to-end ML pipeline for fraud detection with class imbalance handling.",
+    "description": "Improved recall 40% and reduced false positives 18%; achieved AUC 0.96 via SMOTE and threshold tuning.",
     "github": "",
     "demo": "",
     "embed": ""
   },
   {
-    "title": "Movie Recommendation System",
-    "stack": ["Collaborative Filtering", "TMDb API"],
-    "description": "Hybrid recsys with user-item CF and metadata enrichment via TMDb.",
+    "title": "Supply Chain Forecasting & Cost Optimization",
+    "stack": ["Prophet", "Power BI", "SQL"],
+    "description": "Increased forecast accuracy 27% and cut logistics cost 15% with SQL-triggered alerts & dashboards.",
+    "github": "",
+    "demo": "",
+    "embed": ""
+  },
+  {
+    "title": "Real-Time Financial Market Analysis",
+    "stack": ["Kafka", "Spark", "Airflow", "Power BI"],
+    "description": "Streaming ingestion & dashboard for market signals in real time.",
     "github": "",
     "demo": "",
     "embed": ""
@@ -26,11 +34,9 @@
   {
     "title": "Dining Data Visualization (IU)",
     "stack": ["Tableau", "Gephi", "Python"],
-    "description": "Interactive visualizations exploring dining data at IU.",
+    "description": "Interactive exploration of campus dining data across time and space.",
     "github": "",
     "demo": "",
     "embed": ""
   }
 ]
-
-

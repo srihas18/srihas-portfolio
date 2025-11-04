@@ -1,28 +1,13 @@
 [
   {
-    "role": "Data Intern",
-    "company": "Youth Service Bureau of Monroe County",
-    "period": "Jul 2024 – Present",
-    "highlights": [
-      "Built visualizations and analytical dashboards for MC3 Summit"
-    ]
-  },
-  {
     "role": "Research Analyst Intern",
-    "company": "Vosyn",
-    "period": "Jun 2024 – Aug 2024",
+    "company": "Vosyn Inc.",
+    "period": "Jun 2025 – Aug 2025",
     "highlights": [
-      "Conducted market research & data analysis for strategic planning"
-    ]
-  },
-  {
-    "role": "Communications Analyst Intern",
-    "company": "Wipro",
-    "period": "May 2023 – Aug 2023",
-    "highlights": [
-      "Worked on Conversational AI and network automation projects"
+      "Led 5-member team centralizing 2.5k+ records via Python + HubSpot + Crunchbase APIs (+30% data access)",
+      "Designed dashboards improving qualified leads +15%",
+      "Reduced competitor analysis turnaround −20%",
+      "Mentored interns in automation and reproducible workflows"
     ]
   }
 ]
-
-

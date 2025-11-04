@@ -1,19 +1,12 @@
 [
   {
-    "name": "AWS Certified AI Practitioner",
-    "issuer": "Amazon Web Services",
-    "status": "In progress"
-  },
-  {
-    "name": "Data Visualization with Tableau",
-    "issuer": "Coursera",
+    "name": "Data Science with Python, Statistics for Data Science, Data Science Tools",
+    "issuer": "Infosys Springboard",
     "status": "Completed"
   },
   {
-    "name": "Applied Machine Learning",
-    "issuer": "Indiana University",
+    "name": "Programming in Java",
+    "issuer": "NPTEL",
     "status": "Completed"
   }
 ]
-
-

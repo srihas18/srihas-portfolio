@@ -9,6 +9,7 @@ import Skills from './components/Skills'
 import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   const [theme, setTheme] = useState('light')
@@ -40,6 +41,7 @@ export default function App() {
         <section id="contact"><Contact /></section>
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }
