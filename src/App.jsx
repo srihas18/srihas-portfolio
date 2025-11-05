@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -12,25 +12,21 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
-  const [theme, setTheme] = useState('light')
-
   useEffect(() => {
-    const saved = localStorage.getItem('theme')
-    const preferred = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-    setTheme(preferred)
+    // Ensure light theme is always applied
+    document.documentElement.classList.remove('dark')
+    document.body.style.backgroundColor = '#ffffff'
   }, [])
 
-  useEffect(() => {
-    const root = document.documentElement
-    if (theme === 'dark') root.classList.add('dark')
-    else root.classList.remove('dark')
-    localStorage.setItem('theme', theme)
-  }, [theme])
-
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
-      <Navbar theme={theme} setTheme={setTheme} />
-      <main className="flex-1">
+    <div className="min-h-screen flex flex-col bg-white text-gray-900 relative overflow-hidden">
+      {/* Background gradient animation */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white opacity-50" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(122,0,25,0.05),transparent_50%)]" />
+      </div>
+      <Navbar />
+      <main className="flex-1 relative z-10">
         <section id="home" className="pt-20"><Hero /></section>
         <section id="about"><About /></section>
         <section id="education"><Education /></section>

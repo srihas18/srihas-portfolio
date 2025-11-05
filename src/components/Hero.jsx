@@ -1,8 +1,32 @@
 import { motion } from 'framer-motion'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import about from '../data/about.json'
+import { useState } from 'react'
 
 export default function Hero() {
+  const [resumeError, setResumeError] = useState(false)
+
+  const handleResumeClick = (e) => {
+    e.preventDefault()
+    const resumePath = '/Srihas_Gullapalli_Resume.pdf'
+    fetch(resumePath, { method: 'HEAD' })
+      .then(res => {
+        if (res.ok) {
+          window.open(resumePath, '_blank')
+          setResumeError(false)
+        } else {
+          setResumeError(true)
+          console.error('Resume file not found:', resumePath)
+          setTimeout(() => setResumeError(false), 3000)
+        }
+      })
+      .catch(() => {
+        setResumeError(true)
+        console.error('Error checking resume file:', resumePath)
+        setTimeout(() => setResumeError(false), 3000)
+      })
+  }
+
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <motion.div
@@ -23,7 +47,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900"
         >
           Hi, I'm {about.name} 👋
         </motion.h1>
@@ -31,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-4"
+          className="text-xl sm:text-2xl text-gray-700 mb-4"
         >
           {about.title}
         </motion.p>
@@ -39,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-2"
+          className="text-lg sm:text-xl text-gray-600 mb-2"
         >
           {about.subtitle}
         </motion.p>
@@ -47,10 +71,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="text-base sm:text-lg text-gray-500 dark:text-gray-500 mb-8"
+          className="text-base sm:text-lg text-gray-500 mb-8"
         >
           {about.tagline}
         </motion.p>
+        {resumeError && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md text-red-700 text-sm"
+          >
+            Resume file not found. Please ensure Srihas_Gullapalli_Resume.pdf is in the /public folder.
+          </motion.div>
+        )}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,10 +91,9 @@ export default function Hero() {
           className="flex flex-wrap gap-4 justify-center sm:justify-start"
         >
           <a
-            href={about.links.resume}
-            target="_blank"
-            rel="noreferrer"
-            className="px-6 py-3 rounded-md bg-accent text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium flex items-center gap-2"
+            href="/Srihas_Gullapalli_Resume.pdf"
+            onClick={handleResumeClick}
+            className="px-6 py-3 rounded-md bg-accent text-white shadow-lg hover:shadow-xl hover:scale-105 hover:bg-[#9C1333] transition-all duration-300 font-medium flex items-center gap-2"
           >
             📄 View Résumé
           </a>

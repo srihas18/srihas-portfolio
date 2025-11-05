@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
-import DarkModeToggle from './DarkModeToggle'
 import about from '../data/about.json'
 
 const navItems = [
@@ -14,7 +13,7 @@ const navItems = [
   { id: 'contact', label: 'Contact' },
 ]
 
-export default function Navbar({ theme, setTheme }) {
+export default function Navbar() {
   const [active, setActive] = useState('home')
 
   useEffect(() => {
@@ -36,26 +35,70 @@ export default function Navbar({ theme, setTheme }) {
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
+  const handleNavClick = (e, id) => {
+    e.preventDefault()
+    const element = document.getElementById(id)
+    if (element) {
+      const offsetTop = element.offsetTop - 80
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
-    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur bg-white/70 dark:bg-gray-950/70 border-b border-gray-200 dark:border-gray-800">
+    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-white/90 border-b border-gray-200 shadow-sm">
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="#home" className="font-semibold text-lg">Srihas Gullapalli</a>
+        <a 
+          href="#home" 
+          onClick={(e) => handleNavClick(e, 'home')}
+          className="font-semibold text-lg text-gray-900 hover:text-accent transition-colors"
+        >
+          Srihas Gullapalli
+        </a>
         <div className="hidden md:flex items-center gap-6">
           {navItems.map(item => (
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`text-sm hover:text-accent transition-colors ${active === item.id ? 'text-accent' : 'text-gray-700 dark:text-gray-300'}`}
+              onClick={(e) => handleNavClick(e, item.id)}
+              className={`text-sm transition-colors ${
+                active === item.id 
+                  ? 'text-accent font-medium' 
+                  : 'text-gray-700 hover:text-accent'
+              }`}
             >
               {item.label}
             </a>
           ))}
         </div>
         <div className="flex items-center gap-3">
-          <a href={about.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-accent"><FaLinkedin size={20} /></a>
-          <a href={about.links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-accent"><FaGithub size={20} /></a>
-          <a href={`mailto:${about.email}`} aria-label="Email" className="hover:text-accent"><FaEnvelope size={20} /></a>
-          <DarkModeToggle theme={theme} setTheme={setTheme} />
+          <a 
+            href={about.links.linkedin} 
+            target="_blank" 
+            rel="noreferrer" 
+            aria-label="LinkedIn" 
+            className="text-gray-700 hover:text-accent transition-colors"
+          >
+            <FaLinkedin size={20} />
+          </a>
+          <a 
+            href={about.links.github} 
+            target="_blank" 
+            rel="noreferrer" 
+            aria-label="GitHub" 
+            className="text-gray-700 hover:text-accent transition-colors"
+          >
+            <FaGithub size={20} />
+          </a>
+          <a 
+            href={`mailto:${about.email}`} 
+            aria-label="Email" 
+            className="text-gray-700 hover:text-accent transition-colors"
+          >
+            <FaEnvelope size={20} />
+          </a>
         </div>
       </nav>
     </header>

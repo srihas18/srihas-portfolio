@@ -6,15 +6,15 @@ import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 function ProjectCard({ p, onOpen, index }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      whileHover={{ y: -8, scale: 1.02 }}
-      className="rounded-xl border border-gray-200 dark:border-gray-800 p-6 bg-white/70 dark:bg-gray-900/50 backdrop-blur shadow-lg hover:shadow-2xl transition-all duration-300"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      whileHover={{ y: -8, scale: 1.02, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+      className="rounded-xl border border-gray-200 p-6 bg-white shadow-lg hover:shadow-2xl transition-all duration-300"
     >
       <h3 className="font-semibold text-xl mb-3 text-accent">{p.title}</h3>
-      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{p.description}</p>
+      <p className="text-sm text-gray-600 mb-4 leading-relaxed">{p.description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
         {p.stack.map((s, i) => (
           <span
@@ -25,10 +25,10 @@ function ProjectCard({ p, onOpen, index }) {
           </span>
         ))}
       </div>
-      <div className="flex items-center gap-3 pt-2 border-t border-gray-200 dark:border-gray-800">
+      <div className="flex items-center gap-3 pt-2 border-t border-gray-200">
         {p.github && (
           <a
-            className="inline-flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-accent transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-accent transition-colors"
             href={p.github}
             target="_blank"
             rel="noreferrer"
@@ -38,7 +38,7 @@ function ProjectCard({ p, onOpen, index }) {
         )}
         {p.demo && (
           <a
-            className="inline-flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-accent transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-accent transition-colors"
             href={p.demo}
             target="_blank"
             rel="noreferrer"
@@ -66,11 +66,11 @@ export default function Projects() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-3xl font-bold mb-8"
+        className="text-3xl font-bold mb-4 text-gray-900 pb-2 border-b-2 border-gray-200"
       >
         Projects
       </motion.h2>
-      <div className="grid sm:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 gap-6 mt-8">
         {projects.map((p, i) => (
           <ProjectCard key={i} p={p} onOpen={setModal} index={i} />
         ))}
@@ -90,7 +90,7 @@ export default function Projects() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 30, opacity: 0, scale: 0.95 }}
               onClick={(e) => e.stopPropagation()}
-              className="max-w-2xl w-full rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 shadow-2xl"
+              className="max-w-2xl w-full rounded-xl bg-white border border-gray-200 p-6 shadow-2xl"
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <h3 className="text-2xl font-semibold text-accent">{modal.title}</h3>
@@ -101,7 +101,7 @@ export default function Projects() {
                   ×
                 </button>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">{modal.description}</p>
+              <p className="text-gray-700 mb-4 leading-relaxed">{modal.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {modal.stack.map((s, i) => (
                   <span
@@ -113,7 +113,7 @@ export default function Projects() {
                 ))}
               </div>
               {modal.embed && (
-                <div className="aspect-video w-full overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800 mb-4">
+                <div className="aspect-video w-full overflow-hidden rounded-lg border border-gray-200 mb-4">
                   <iframe
                     src={modal.embed}
                     className="w-full h-full"
@@ -126,13 +126,13 @@ export default function Projects() {
                 <img
                   src={modal.architecture}
                   alt="Architecture diagram"
-                  className="rounded-lg border border-gray-200 dark:border-gray-800 mb-4 w-full"
+                  className="rounded-lg border border-gray-200 mb-4 w-full"
                 />
               )}
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
+              <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
                 {modal.github && (
                   <a
-                    className="inline-flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-accent transition-colors font-medium"
+                    className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-accent transition-colors font-medium"
                     href={modal.github}
                     target="_blank"
                     rel="noreferrer"
@@ -142,7 +142,7 @@ export default function Projects() {
                 )}
                 {modal.demo && (
                   <a
-                    className="inline-flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 hover:text-accent transition-colors font-medium"
+                    className="inline-flex items-center gap-2 text-sm text-gray-700 hover:text-accent transition-colors font-medium"
                     href={modal.demo}
                     target="_blank"
                     rel="noreferrer"
